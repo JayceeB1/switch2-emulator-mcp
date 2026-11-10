@@ -1,0 +1,55 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "switch2-emulator-mcp"
+version = "2.2.0"
+description = "Model Context Protocol (MCP 2024-11-05) diagnostics server for Switch 2 emulators (Lichii, Eglantine, Fritchii, Eden)"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "GPL-3.0-or-later" }
+authors = [
+    { name = "JC (JayceeB1)", email = "jayceeb1@users.noreply.github.com" }
+]
+keywords = [
+    "switch2",
+    "mcp",
+    "model-context-protocol",
+    "lichii",
+    "eglantine",
+    "fritchii",
+    "eden",
+    "shader-cache",
+    "vulkan",
+    "claude",
+    "cursor",
+    "codex"
+]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)",
+    "Operating System :: Microsoft :: Windows",
+    "Operating System :: POSIX :: Linux",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: System :: Hardware",
+    "Topic :: Games/Entertainment"
+]
+dependencies = []
+
+[project.optional-dependencies]
+all = [
+    "psutil>=5.9.0",
+    "pillow>=10.0.0",
+    "pywin32>=306; sys_platform == 'win32'",
+    "xxhash>=3.0.0"
+]
+
+[project.scripts]
+switch2-mcp = "emulator_mcp_server:main"
